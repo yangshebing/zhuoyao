@@ -1,11 +1,11 @@
 var express = require('express');
 var fs = require('fs');
 const {exec} = require('child_process');
-
+var path = require('path'); 
 var router = express.Router();
 
-let gpx_file_position = '/Users/hanfeihang/projects/GodFeet/Location.gpx';
-let apple_script_position = '/Users/hanfeihang/projects/zhuoyao/apple_script/xcode_simulation';
+let gpx_file_position = path.join(process.cwd(), '/TestLocationDemo/TestLocationDemo/Location.gpx');
+let apple_script_position = path.join(process.cwd(), '/apple_script/xcode_simulation');
 
 /* GET users listing. */
 router.get('/lon/:lon/lat/:lat', function (req, res, next) {
